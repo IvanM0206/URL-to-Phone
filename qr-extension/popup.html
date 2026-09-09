@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>QR Tab</title>
+  <link rel="stylesheet" href="popup.css" />
+</head>
+<body>
+  <div class="container">
+    <header>
+      <div class="logo-wrap">
+        <svg class="logo-icon" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <rect x="2" y="2" width="8" height="8" rx="1.5" stroke="currentColor" stroke-width="1.8"/>
+          <rect x="4" y="4" width="4" height="4" rx="0.5" fill="currentColor"/>
+          <rect x="14" y="2" width="8" height="8" rx="1.5" stroke="currentColor" stroke-width="1.8"/>
+          <rect x="16" y="4" width="4" height="4" rx="0.5" fill="currentColor"/>
+          <rect x="2" y="14" width="8" height="8" rx="1.5" stroke="currentColor" stroke-width="1.8"/>
+          <rect x="4" y="16" width="4" height="4" rx="0.5" fill="currentColor"/>
+          <rect x="14" y="14" width="2.5" height="2.5" rx="0.4" fill="currentColor"/>
+          <rect x="18" y="14" width="2.5" height="2.5" rx="0.4" fill="currentColor"/>
+          <rect x="14" y="17.5" width="2.5" height="2.5" rx="0.4" fill="currentColor"/>
+          <rect x="18" y="17.5" width="2.5" height="2.5" rx="0.4" fill="currentColor"/>
+          <rect x="14" y="21" width="2.5" height="3" rx="0.4" fill="currentColor"/>
+          <rect x="17.5" y="21" width="4.5" height="3" rx="0.4" fill="currentColor"/>
+        </svg>
+        <span class="logo-text">QR Tab</span>
+      </div>
+    </header>
+
+    <main>
+      <div id="qr-container" class="qr-box">
+        <div id="qr-canvas-wrap"></div>
+      </div>
+      <div class="url-chip" id="url-chip">
+        <span id="url-text"></span>
+      </div>
+    </main>
+
+    <footer>
+      <button id="copy-btn" class="btn">
+        <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <rect x="9" y="9" width="12" height="12" rx="2" stroke="currentColor" stroke-width="1.8"/>
+          <path d="M15 9V6a2 2 0 0 0-2-2H6a2 2 0 0 0-2 2v7a2 2 0 0 0 2 2h3" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/>
+        </svg>
+        <span id="copy-label">Copiar URL</span>
+      </button>
+    </footer>
+  </div>
+
+  <script src="qrcode.min.js"></script>
+  <script src="popup.js"></script>
+</body>
+</html>
