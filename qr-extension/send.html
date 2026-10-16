@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>QR Tab · Transferir archivo</title>
+  <link rel="stylesheet" href="send.css" />
+</head>
+<body>
+  <main class="card">
+    <header>
+      <span class="logo-text">QR Tab</span>
+      <span class="logo-sub">Transferir archivo</span>
+    </header>
+
+    <section id="step-pick">
+      <label id="dropzone" class="dropzone" for="file-input">
+        <span class="dz-title">Arrastrá un archivo para enviarlo al celular</span>
+        <span class="dz-sub">o hacé clic para elegirlo</span>
+      </label>
+      <input id="file-input" type="file" hidden />
+      <button id="recv-btn" class="btn alt" type="button">Recibir un archivo del celular</button>
+    </section>
+
+    <section id="step-session" hidden>
+      <div id="file-chip" class="file-chip" hidden>
+        <span id="file-name" class="file-name"></span>
+        <span id="file-size" class="file-size"></span>
+      </div>
+
+      <div id="qr-box" class="qr-box" hidden>
+        <div id="qr-wrap"></div>
+      </div>
+
+      <p id="status" class="status"></p>
+
+      <div class="progress" id="progress" hidden>
+        <div class="progress-bar" id="progress-bar"></div>
+      </div>
+
+      <div class="actions">
+        <button id="accept-btn" class="btn primary" type="button" hidden>Aceptar y recibir</button>
+        <button id="decline-btn" class="btn" type="button" hidden>Rechazar</button>
+        <a id="save-link" class="btn primary" hidden>Guardar archivo</a>
+        <button id="cancel-btn" class="btn" type="button">Cancelar</button>
+        <button id="again-btn" class="btn primary" type="button" hidden>Transferir otro archivo</button>
+      </div>
+    </section>
+
+    <p class="foot">El archivo viaja directo entre tus dispositivos. Mantené esta pestaña abierta hasta que termine.</p>
+  </main>
+
+  <script src="qrcode.min.js"></script>
+  <script src="peerjs.min.js"></script>
+  <script src="config.js"></script>
+  <script src="transfer.js"></script>
+  <script src="send.js"></script>
+</body>
+</html>

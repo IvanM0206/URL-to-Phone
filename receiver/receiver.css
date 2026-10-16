@@ -1,0 +1,72 @@
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+[hidden] { display: none !important; }
+
+:root {
+  --bg: #0f0f11;
+  --surface: #18181c;
+  --border: rgba(255,255,255,0.08);
+  --accent: #7c6af7;
+  --text-primary: #f0f0f5;
+  --text-muted: rgba(240,240,245,0.55);
+  --danger: #ff7a85;
+  --ok: #7ee2a8;
+}
+
+body {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 24px;
+  background: var(--bg);
+  color: var(--text-primary);
+  font-family: system-ui, -apple-system, 'Segoe UI', sans-serif;
+  -webkit-font-smoothing: antialiased;
+}
+
+.card { width: 100%; max-width: 400px; display: flex; flex-direction: column; gap: 20px; }
+
+header { display: flex; align-items: baseline; gap: 10px; }
+.logo-text { font-size: 17px; font-weight: 600; letter-spacing: -0.3px; }
+.logo-sub { font-size: 13px; color: var(--text-muted); }
+
+.status { font-size: 15px; text-align: center; color: var(--text-muted); line-height: 1.4; }
+.status.error { color: var(--danger); }
+.status.ok { color: var(--ok); }
+
+.file-chip {
+  display: flex;
+  justify-content: space-between;
+  gap: 12px;
+  padding: 12px 16px;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 14px;
+  font-size: 14px;
+}
+.file-name { overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+.file-size { color: var(--text-muted); flex-shrink: 0; }
+
+.progress { height: 6px; background: rgba(255,255,255,0.08); border-radius: 100px; overflow: hidden; }
+.progress-bar { height: 100%; width: 0; background: var(--accent); transition: width 0.15s linear; }
+
+.actions { display: flex; flex-direction: column; gap: 10px; }
+.btn {
+  display: block;
+  width: 100%;
+  padding: 14px 16px;
+  border-radius: 12px;
+  border: 1px solid var(--border);
+  background: rgba(255,255,255,0.05);
+  color: var(--text-primary);
+  font: inherit;
+  font-size: 15px;
+  font-weight: 500;
+  text-align: center;
+  text-decoration: none;
+  cursor: pointer;
+}
+.btn.primary { background: rgba(124,106,247,0.25); border-color: rgba(124,106,247,0.55); }
+
+.foot { font-size: 12px; color: var(--text-muted); text-align: center; line-height: 1.4; }

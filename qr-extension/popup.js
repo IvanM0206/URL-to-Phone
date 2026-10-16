@@ -21,6 +21,12 @@
     correctLevel: QRCode.CorrectLevel.M,
   });
 
+  // The popup closes when the file dialog opens, so the transfer lives in its own tab.
+  document.getElementById('send-btn').addEventListener('click', () => {
+    chrome.tabs.create({ url: chrome.runtime.getURL('send.html') });
+    window.close();
+  });
+
   // Copy URL button
   const copyBtn = document.getElementById('copy-btn');
   const copyLabel = document.getElementById('copy-label');

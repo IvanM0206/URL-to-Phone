@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="referrer" content="no-referrer" />
+  <meta http-equiv="Content-Security-Policy" content="default-src 'none'; script-src 'self'; style-src 'self'; connect-src wss://0.peerjs.com https://0.peerjs.com; img-src 'self' data:; base-uri 'none'; form-action 'none'" />
+  <title>QR Tab · Transferir archivo</title>
+  <link rel="stylesheet" href="receiver.css" />
+</head>
+<body>
+  <main class="card">
+    <header>
+      <span class="logo-text">QR Tab</span>
+      <span class="logo-sub">Transferir archivo</span>
+    </header>
+
+    <p id="status" class="status">Conectando…</p>
+
+    <div id="file-chip" class="file-chip" hidden>
+      <span id="file-name" class="file-name"></span>
+      <span id="file-size" class="file-size"></span>
+    </div>
+
+    <div class="progress" id="progress" hidden>
+      <div class="progress-bar" id="progress-bar"></div>
+    </div>
+
+    <div class="actions">
+      <label id="pick-btn" class="btn primary" for="file-input" hidden>Elegir archivo</label>
+      <input id="file-input" type="file" hidden />
+      <button id="accept-btn" class="btn primary" type="button" hidden>Recibir archivo</button>
+      <button id="decline-btn" class="btn" type="button" hidden>Rechazar</button>
+      <a id="save-link" class="btn primary" hidden>Guardar archivo</a>
+    </div>
+
+    <p class="foot">El archivo viaja directo entre tu celular y tu computadora, sin pasar por ningún servidor.</p>
+  </main>
+
+  <script src="peerjs.min.js"></script>
+  <script src="transfer.js"></script>
+  <script src="receiver.js"></script>
+</body>
+</html>
